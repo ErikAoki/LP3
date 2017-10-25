@@ -17,21 +17,22 @@ public class Pagina2Controller extends AbstractController {
     
     @Override
     public void execute() {
+        String tipo = request.getParameter("tipo");
         String opcao = request.getParameter("opcao");
         if ("inserir".equals(opcao)) {
-            this.setReturnPage("/paginainserir.jsp");
+            this.setReturnPage("/"+tipo+"inserir.jsp");
     }
         if ("alterar".equals(opcao)) {
-            this.setReturnPage("/paginaalterar.jsp");
+            this.setReturnPage("/"+tipo+"alterar.jsp");
         }
         if ("deletar".equals(opcao)) {
-            this.setReturnPage("/paginadeletar.jsp");
+            this.setReturnPage("/"+tipo+"deletar.jsp");
         }
         if ("procurar".equals(opcao)) {
-            this.setReturnPage("/paginaprocurar.jsp");
+            this.setReturnPage("/"+tipo+"procurar.jsp");
         }
         if ("todos".equals(opcao)) {
-            this.setReturnPage("/paginatodos.jsp");
+            this.setReturnPage("/"+tipo+"todos.jsp");
         }
     }
 }
