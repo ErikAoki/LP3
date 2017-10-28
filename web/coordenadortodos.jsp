@@ -5,9 +5,9 @@
 --%>
 
 <%@page import="mack.entity.Coordenador"%>
-<%@page import="mack.dao.impl.DAOMySQL"%>
+<%@page import="mack.dao.impl.DAOMySQLCoordenador"%>
 <%@page import="java.util.List"%>
-<% DAOMySQL dao = new DAOMySQL();
+<% DAOMySQLCoordenador dao = new DAOMySQLCoordenador();
 
 
 %>
@@ -21,16 +21,16 @@
     <body>
         <h1>Lista de Usuários</h1>
         <%
-            List<Coordenador> coordenadores = dao.getAllCoordenadores();
+            List<Coordenador> coordenadores = dao.getAll();
             
             if(coordenadores == null) {
-            System.out.println("Problema ao tentar buscar os alunos");
+            System.out.println("Problema ao tentar buscar os coordenadores.");
             return;
         } 
         
         for(Coordenador coordenador : coordenadores) {
-            out.println("Aluno: " + coordenador.getNome_coordenador() + "<br> Código: " +
-                    coordenador.getCod_coordenador() + ".<br><br>");
+            out.println("Coordenador: " + coordenador.getNome_coord() + "<br> Código: " +
+                    coordenador.getCod_coord() + ".<br><br>");
         }
         %>
    

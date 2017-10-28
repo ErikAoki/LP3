@@ -5,7 +5,6 @@
  */
 package mack.dao.impl;
 
-import mack.entity.Aluno;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -15,12 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import mack.entity.Disciplina;
 
 /**
  *
  * @author AOKI
  */
-public class DAOMySQLDisciplina implements DAOFactory {
+public class DAOMySQLDisciplina implements DAOFactory<Disciplina> {
     private final String url = "jdbc:mysql://localhost:3306/mysql";
     private final String user = "root";
     private final String password = "140194";
@@ -34,11 +34,11 @@ public class DAOMySQLDisciplina implements DAOFactory {
     }
     
     @Override
-    public boolean create(Aluno aluno) {
-        int cod_aluno = aluno.getCod_aluno();
-        String nome_aluno = aluno.getNome_aluno();
-        
-        String query = "INSERT INTO Aluno VALUES (" + cod_aluno + ", '" + nome_aluno + "');";
+    public boolean create(Disciplina disciplina) {
+        int cod_disciplina = disciplina.getCod_disciplina();
+        String nome_disciplina = disciplina.getNome_disciplina();
+        int cod_curso = disciplina.getCod_curso();
+        String query = "INSERT INTO Disciplina VALUES (" + cod_disciplina + ", '" + nome_disciplina + "'," + cod_curso + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -63,7 +63,7 @@ public class DAOMySQLDisciplina implements DAOFactory {
     @Override
     public boolean delete(int cod) {
         
-        String query = "DELETE FROM Aluno WHERE (cod_aluno = " + cod + ");";
+        String query = "DELETE FROM Disciplina WHERE (cod_disciplina = " + cod + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -86,8 +86,8 @@ public class DAOMySQLDisciplina implements DAOFactory {
     };
 
     @Override
-    public Aluno read(int cod) {
-        String query = "SELECT * FROM Aluno WHERE (cod_aluno = " + cod + ");";
+    public Disciplina read(int cod) {
+        String query = "SELECT * FROM Disciplina WHERE (cod_disciplina = " + cod + ");";
         boolean achou = false;
         Connection conn = null;
             try {
@@ -95,14 +95,14 @@ public class DAOMySQLDisciplina implements DAOFactory {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             if(rs != null && rs.next()){
-                Aluno a = new Aluno(rs.getInt("cod_aluno"), rs.getString("nome_aluno"));
+                Disciplina a = new Disciplina(rs.getInt("cod_disciplina"), rs.getString("nome_disciplina"), rs.getInt("cod_curso"));
             }
-            Aluno a = new Aluno(rs.getInt("cod_aluno"), rs.getString("nome_aluno"));
+            Disciplina a = new Disciplina(rs.getInt("cod_disciplina"), rs.getString("nome_disciplina"), rs.getInt("cod_curso"));
             conn.close();
             return a;
         } catch (Exception ex) {
             ex.printStackTrace();
-            String erro = "Não foi encontrado aluno com esse código.";
+            String erro = "Não foi encontrado disciplina com esse código.";
             System.out.println(erro);
         } finally {
             if(conn != null)
@@ -116,11 +116,12 @@ public class DAOMySQLDisciplina implements DAOFactory {
     };
 
     @Override
-    public boolean update(int cod, Aluno aluno) {
-        int cod_aluno = aluno.getCod_aluno();
-        String nome_aluno = aluno.getNome_aluno();
-        System.out.println(cod_aluno + nome_aluno);
-        String query = "UPDATE Aluno SET cod_aluno = " + cod_aluno + ", nome_aluno = '" + nome_aluno + "' WHERE (cod_aluno = " + cod + ");";
+    public boolean update(int cod, Disciplina disciplina) {
+        int cod_disciplina = disciplina.getCod_disciplina();
+        String nome_disciplina = disciplina.getNome_disciplina();
+        int cod_curso = disciplina.getCod_curso();
+        System.out.println(cod_disciplina + nome_disciplina);
+        String query = "UPDATE Disciplina SET cod_disciplina = " + cod_disciplina + ", nome_disciplina = '" + nome_disciplina + "', cod_curso = " + cod_curso + " WHERE (cod_disciplina = " + cod + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -143,8 +144,8 @@ public class DAOMySQLDisciplina implements DAOFactory {
     }
 
     @Override
-    public List<Aluno> getAllAlunos() {
-        String query = "SELECT * FROM Aluno;";
+    public List<Disciplina> getAll() {
+        String query = "SELECT * FROM Disciplina;";
         
         Connection conn = null;
         try {
@@ -152,10 +153,10 @@ public class DAOMySQLDisciplina implements DAOFactory {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             
-            List<Aluno> result = new ArrayList();
+            List<Disciplina> result = new ArrayList();
             
             while(rs.next()) {
-                Aluno a = new Aluno(rs.getInt("cod_aluno"), rs.getString("nome_aluno"));
+                Disciplina a = new Disciplina(rs.getInt("cod_disciplina"), rs.getString("nome_disciplina"), rs.getInt("cod_curso"));
                 result.add(a);
             }
             conn.close();

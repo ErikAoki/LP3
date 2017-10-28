@@ -37,21 +37,13 @@
    
    if ("procurar".equals(opcao)) {
        Aluno a = dao.read(Integer.parseInt(codAluno));
+       if (a==null){
            resultado = "O nome do aluno é: " + a.getNome_aluno() + ". "
                    + "E o código dele é: " + a.getCod_aluno() + ".";
+       } else {
+           resultado = "Não foi encontrado aluno com esse código.";
+                   }
        }
-   
-   List<Aluno> alunos = dao.getAllAlunos();
-        
-        if(alunos == null) {
-            System.out.println("Problema ao tentar buscar os alunos");
-            return;
-        } 
-        
-        for(Aluno aluno : alunos) {
-            out.println("Aluno " + aluno.getNome_aluno() + " (" +
-                    aluno.getCod_aluno() + ") encontrado via DAO");
-        }
     %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

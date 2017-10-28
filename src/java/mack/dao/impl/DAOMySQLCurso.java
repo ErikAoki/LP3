@@ -5,7 +5,7 @@
  */
 package mack.dao.impl;
 
-import mack.entity.Aluno;
+import mack.entity.Curso;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -20,7 +20,7 @@ import java.util.logging.Logger;
  *
  * @author AOKI
  */
-public class DAOMySQL implements DAOFactory<Aluno> {
+public class DAOMySQLCurso implements DAOFactory<Curso> {
     private final String url = "jdbc:mysql://localhost:3306/mysql";
     private final String user = "root";
     private final String password = "140194";
@@ -34,11 +34,11 @@ public class DAOMySQL implements DAOFactory<Aluno> {
     }
     
     @Override
-    public boolean create(Aluno aluno) {
-        int cod_aluno = aluno.getCod_aluno();
-        String nome_aluno = aluno.getNome_aluno();
+    public boolean create(Curso curso) {
+        int cod_curso = curso.getCod_curso();
+        String nome_curso = curso.getNome_curso();
         
-        String query = "INSERT INTO Aluno VALUES (" + cod_aluno + ", '" + nome_aluno + "');";
+        String query = "INSERT INTO Curso VALUES (" + cod_curso + ", '" + nome_curso + "');";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -63,7 +63,7 @@ public class DAOMySQL implements DAOFactory<Aluno> {
     @Override
     public boolean delete(int cod) {
         
-        String query = "DELETE FROM Aluno WHERE (cod_aluno = " + cod + ");";
+        String query = "DELETE FROM Curso WHERE (cod_curso = " + cod + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -86,8 +86,8 @@ public class DAOMySQL implements DAOFactory<Aluno> {
     };
 
     @Override
-    public Aluno read(int cod) {
-        String query = "SELECT * FROM Aluno WHERE (cod_aluno = " + cod + ");";
+    public Curso read(int cod) {
+        String query = "SELECT * FROM Curso WHERE (cod_curso = " + cod + ");";
         boolean achou = false;
         Connection conn = null;
             try {
@@ -95,14 +95,14 @@ public class DAOMySQL implements DAOFactory<Aluno> {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             if(rs != null && rs.next()){
-                Aluno a = new Aluno(rs.getInt("cod_aluno"), rs.getString("nome_aluno"));
+                Curso a = new Curso(rs.getInt("cod_curso"), rs.getString("nome_curso"));
             }
-            Aluno a = new Aluno(rs.getInt("cod_aluno"), rs.getString("nome_aluno"));
+            Curso a = new Curso(rs.getInt("cod_curso"), rs.getString("nome_curso"));
             conn.close();
             return a;
         } catch (Exception ex) {
             ex.printStackTrace();
-            String erro = "Não foi encontrado aluno com esse código.";
+            String erro = "Não foi encontrado curso com esse código.";
             System.out.println(erro);
         } finally {
             if(conn != null)
@@ -116,11 +116,11 @@ public class DAOMySQL implements DAOFactory<Aluno> {
     };
 
     @Override
-    public boolean update(int cod, Aluno aluno) {
-        int cod_aluno = aluno.getCod_aluno();
-        String nome_aluno = aluno.getNome_aluno();
-        System.out.println(cod_aluno + nome_aluno);
-        String query = "UPDATE Aluno SET cod_aluno = " + cod_aluno + ", nome_aluno = '" + nome_aluno + "' WHERE (cod_aluno = " + cod + ");";
+    public boolean update(int cod, Curso curso) {
+        int cod_curso = curso.getCod_curso();
+        String nome_curso = curso.getNome_curso();
+        System.out.println(cod_curso + nome_curso);
+        String query = "UPDATE Curso SET cod_curso = " + cod_curso + ", nome_curso = '" + nome_curso + "' WHERE (cod_curso = " + cod + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -143,8 +143,8 @@ public class DAOMySQL implements DAOFactory<Aluno> {
     }
 
     @Override
-    public List<Aluno> getAll() {
-        String query = "SELECT * FROM Aluno;";
+    public List<Curso> getAll() {
+        String query = "SELECT * FROM Curso;";
         
         Connection conn = null;
         try {
@@ -152,10 +152,10 @@ public class DAOMySQL implements DAOFactory<Aluno> {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             
-            List<Aluno> result = new ArrayList();
+            List<Curso> result = new ArrayList();
             
             while(rs.next()) {
-                Aluno a = new Aluno(rs.getInt("cod_aluno"), rs.getString("nome_aluno"));
+                Curso a = new Curso(rs.getInt("cod_curso"), rs.getString("nome_curso"));
                 result.add(a);
             }
             conn.close();

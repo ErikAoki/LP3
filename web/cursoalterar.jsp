@@ -16,9 +16,9 @@
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Resultado">
             <input type="hidden" name="opcao" value="alterar">
-            Digite código do aluno a ser alterado: <input type="text" name="cod_aluno2" id="cod_aluno2"><br>
-            Digite nome novo do aluno: <input type="text" name="nome_aluno" id="nome_aluno"><br>
-            Digite código novo do aluno: <input type="text" name="cod_aluno" id="cod_aluno">
+            Digite código do curso a ser alterado: <input type="text" name="cod_curso2" id="cod_curso2"><br>
+            Digite nome novo do curso: <input type="text" name="nome_curso" id="nome_curso"><br>
+            Digite código novo do curso: <input type="text" name="cod_curso" id="cod_curso">
         <input type="submit" value="Alterar">
         </form>
         <form action="FrontController" method="post">

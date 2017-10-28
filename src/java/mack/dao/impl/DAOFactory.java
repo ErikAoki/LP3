@@ -12,10 +12,11 @@ import mack.entity.Aluno;
  *
  * @author AOKI
  */
-public interface DAOFactory {
-    public boolean create(Aluno aluno);
+public interface DAOFactory<T> {
+    
+    public boolean create(T t);
     public boolean delete(int cod);
-    public Aluno read(int cod);
-    public boolean update(int cod, Aluno aluno);
-    public List<Aluno> getAllAlunos();
+    public T read(int cod);
+    public boolean update(int cod, T t);
+    public List<T> getAll();
 }

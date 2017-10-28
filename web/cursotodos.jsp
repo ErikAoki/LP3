@@ -4,10 +4,10 @@
     Author     : AOKI
 --%>
 
-<%@page import="mack.entity.Aluno"%>
-<%@page import="mack.dao.impl.DAOMySQL"%>
+<%@page import="mack.entity.Curso"%>
+<%@page import="mack.dao.impl.DAOMySQLCurso"%>
 <%@page import="java.util.List"%>
-<% DAOMySQL dao = new DAOMySQL();
+<% DAOMySQLCurso dao = new DAOMySQLCurso();
 
 
 %>
@@ -21,16 +21,16 @@
     <body>
         <h1>Lista de Usuários</h1>
         <%
-            List<Aluno> alunos = dao.getAll();
+            List<Curso> cursos = dao.getAll();
             
-            if(alunos == null) {
-            System.out.println("Problema ao tentar buscar os alunos");
+            if(cursos == null) {
+            System.out.println("Problema ao tentar buscar os cursos");
             return;
         } 
         
-        for(Aluno aluno : alunos) {
-            out.println("Aluno: " + aluno.getNome_aluno() + "<br> Código: " +
-                    aluno.getCod_aluno() + ".<br><br>");
+        for(Curso curso : cursos) {
+            out.println("Curso: " + curso.getNome_curso() + "<br> Código: " +
+                    curso.getCod_curso() + ".<br><br>");
         }
         %><br>
         <form action="FrontController" method="post">

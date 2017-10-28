@@ -5,9 +5,6 @@
 --%>
 <%@page import="java.time.Period"%>
 <%@page import="java.time.LocalDate"%>
-<% String nome_aluno = request.getParameter("nome_aluno");
-   String cod_aluno = request.getParameter("cod_aluno");
-    %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -18,12 +15,11 @@
     <body>
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Resultado">
-            <input type="hidden" name="opcao" value="alterar">
-            Digite código da disciplina a ser alterada: <input type="text" name="cod_disciplina2" id="cod_disciplina2"><br>
-            Digite nome novo da disciplina: <input type="text" name="nome_disciplina" id="nome_disciplina"><br>
-            Digite código novo da disciplina: <input type="text" name="cod_disciplina" id="cod_disciplina">
-            Digite código novo do curso a que pertence: <input type="text" name="cod_curso" id="cod_curso">
-        <input type="submit" value="Alterar">
+            <input type="hidden" name="opcao" value="inserir">
+            Digite nome da disciplina: <input type="text" name="nome_disciplina" id="nome_disciplina"><br>
+            Digite código da disciplina: <input type="text" name="cod_disciplina" id="cod_disciplina"><br>
+            Digite código do curso a que pertence: <input type="text" name="cod_curso" id="cod_curso">
+        <input type="submit" value="Inserir">
         </form>
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Index">

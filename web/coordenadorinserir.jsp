@@ -16,9 +16,9 @@
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Resultado">
             <input type="hidden" name="opcao" value="inserir">
-            Digite nome do coordenador: <input type="text" name="nome_coordenador" id="nome_coordenador"><br>
-            Digite código do coordenador: <input type="text" name="cod_coordenador" id="cod_coordenador">
-            Digite código do curso: <input type="text" name="cod_curso" id="cod_curso">
+            Digite nome do coordenador: <input type="text" name="nome_coord" id="nome_coord"><br>
+            Digite código do coordenador: <input type="text" name="cod_coord" id="cod_coord"><br>
+            Digite código do curso coordenado: <input type="text" name="cod_curso" id="cod_curso">
         <input type="submit" value="Inserir">
         </form>
         <form action="FrontController" method="post">

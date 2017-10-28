@@ -13,6 +13,13 @@ public class Curso {
     private int cod_curso;
     private String nome_curso;
 
+    public Curso(int cod_curso, String nome_curso) {
+        this.cod_curso = cod_curso;
+        this.nome_curso = nome_curso;
+    }
+    
+    
+
     public int getCod_curso() {
         return cod_curso;
     }

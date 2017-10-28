@@ -28,6 +28,10 @@ and open the template in the editor.
             <input type="radio" name="opcao" value="todos"><br>
             <input type="submit" name="OK" value="Enviar">
             </form>
+            <form action="FrontController" method="post">
+            <input type="hidden" name="control" value="Index">
+            <input type="submit" value="Voltar">
+        </form>
         </div>
     </body>
 </html>
