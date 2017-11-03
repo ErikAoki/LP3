@@ -38,10 +38,10 @@
    if ("procurar".equals(opcao)) {
        Aluno a = dao.read(Integer.parseInt(codAluno));
        if (a==null){
+           resultado = "Não foi encontrado aluno com esse código.";
+       } else {
            resultado = "O nome do aluno é: " + a.getNome_aluno() + ". "
                    + "E o código dele é: " + a.getCod_aluno() + ".";
-       } else {
-           resultado = "Não foi encontrado aluno com esse código.";
                    }
        }
     %>

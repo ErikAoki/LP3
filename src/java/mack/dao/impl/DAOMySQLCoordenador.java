@@ -21,7 +21,7 @@ import mack.entity.Coordenador;
  * @author AOKI
  */
 public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
-    private final String url = "jdbc:mysql://localhost:3306/mysql";
+    private final String url = "jdbc:mysql://localhost:3306/meubd";
     private final String user = "root";
     private final String password = "140194";
     

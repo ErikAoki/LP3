@@ -16,6 +16,7 @@
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Resultado">
             <input type="hidden" name="opcao" value="alterar">
+            <input type="hidden" name="tipo" value="coordenador">
             Digite código do coordenador a ser alterado: <input type="text" name="cod_aluno2" id="cod_coord2"><br>
             Digite nome novo do coordenador: <input type="text" name="nome_coordenador" id="nome_coord"><br>
             Digite código novo do coordenador: <input type="text" name="cod_coordenador" id="cod_coord">

@@ -11,7 +11,7 @@
     String codDisciplina = request.getParameter("cod_disciplina");
     String codAlterar = request.getParameter("cod_disciplina2");
     String cod_curso = request.getParameter("cod_curso");
-    Disciplina a1 = new Disciplina(Integer.parseInt(codDisciplina), nomeDisciplina, Integer.parseInt(cod_curso));
+    Disciplina a1 = new Disciplina(Integer.parseInt(codDisciplina), Integer.parseInt(cod_curso), nomeDisciplina);
     String resultado = "";
    DAOMySQLDisciplina dao = new DAOMySQLDisciplina();
    if ("inserir".equals(opcao)) {
@@ -39,10 +39,10 @@
    if ("procurar".equals(opcao)) {
        Disciplina a = dao.read(Integer.parseInt(codDisciplina));
        if (a==null){
-           resultado = "O nome do disciplina é: " + a.getNome_disciplina() + ". "
-                   + "E o código dele é: " + a.getCod_disciplina() + ".";
-       } else {
            resultado = "Não foi encontrado disciplina com esse código.";
+       } else {
+           resultado = "O nome da disciplina é: " + a.getNome_disciplina() + ". "
+                   + "E o código dela é: " + a.getCod_disciplina() + ".";
                    }
        }
     %>

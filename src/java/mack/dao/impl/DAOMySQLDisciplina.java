@@ -21,7 +21,7 @@ import mack.entity.Disciplina;
  * @author AOKI
  */
 public class DAOMySQLDisciplina implements DAOFactory<Disciplina> {
-    private final String url = "jdbc:mysql://localhost:3306/mysql";
+    private final String url = "jdbc:mysql://localhost:3306/meubd";
     private final String user = "root";
     private final String password = "140194";
     
@@ -38,7 +38,7 @@ public class DAOMySQLDisciplina implements DAOFactory<Disciplina> {
         int cod_disciplina = disciplina.getCod_disciplina();
         String nome_disciplina = disciplina.getNome_disciplina();
         int cod_curso = disciplina.getCod_curso();
-        String query = "INSERT INTO Disciplina VALUES (" + cod_disciplina + ", '" + nome_disciplina + "'," + cod_curso + ");";
+        String query = "INSERT INTO Disciplina VALUES (" + cod_disciplina + ", " + cod_curso + ", '" + nome_disciplina + "');";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -95,9 +95,9 @@ public class DAOMySQLDisciplina implements DAOFactory<Disciplina> {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             if(rs != null && rs.next()){
-                Disciplina a = new Disciplina(rs.getInt("cod_disciplina"), rs.getString("nome_disciplina"), rs.getInt("cod_curso"));
+                Disciplina a = new Disciplina(rs.getInt("cod_disciplina"), rs.getInt("cod_curso"), rs.getString("nome_disciplina"));
             }
-            Disciplina a = new Disciplina(rs.getInt("cod_disciplina"), rs.getString("nome_disciplina"), rs.getInt("cod_curso"));
+            Disciplina a = new Disciplina(rs.getInt("cod_disciplina"), rs.getInt("cod_curso"), rs.getString("nome_disciplina"));
             conn.close();
             return a;
         } catch (Exception ex) {
@@ -121,7 +121,7 @@ public class DAOMySQLDisciplina implements DAOFactory<Disciplina> {
         String nome_disciplina = disciplina.getNome_disciplina();
         int cod_curso = disciplina.getCod_curso();
         System.out.println(cod_disciplina + nome_disciplina);
-        String query = "UPDATE Disciplina SET cod_disciplina = " + cod_disciplina + ", nome_disciplina = '" + nome_disciplina + "', cod_curso = " + cod_curso + " WHERE (cod_disciplina = " + cod + ");";
+        String query = "UPDATE Disciplina SET cod_disciplina = " + cod_disciplina + ", cod_curso = '" + nome_disciplina + "', nome_disciplina = " + cod_curso + " WHERE (cod_disciplina = " + cod + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -156,7 +156,7 @@ public class DAOMySQLDisciplina implements DAOFactory<Disciplina> {
             List<Disciplina> result = new ArrayList();
             
             while(rs.next()) {
-                Disciplina a = new Disciplina(rs.getInt("cod_disciplina"), rs.getString("nome_disciplina"), rs.getInt("cod_curso"));
+                Disciplina a = new Disciplina(rs.getInt("cod_disciplina"), rs.getInt("cod_curso"), rs.getString("nome_disciplina"));
                 result.add(a);
             }
             conn.close();

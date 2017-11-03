@@ -19,7 +19,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Lista de Usuários</h1>
+        <h1>Lista de Cursos</h1>
         <%
             List<Curso> cursos = dao.getAll();
             

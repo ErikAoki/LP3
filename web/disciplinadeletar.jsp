@@ -16,6 +16,7 @@
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Resultado">
             <input type="hidden" name="opcao" value="deletar">
+            <input type="hidden" name="tipo" value="disciplina">
             Digite código da disciplina a ser deletada: <input type="text" name="cod_disciplina" id="cod_disciplina">
         <input type="submit" value="Deletar">
         </form>

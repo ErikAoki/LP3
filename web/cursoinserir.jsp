@@ -16,6 +16,7 @@
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Resultado">
             <input type="hidden" name="opcao" value="inserir">
+            <input type="hidden" name="tipo" value="curso">
             Digite nome do curso: <input type="text" name="nome_curso" id="nome_curso"><br>
             Digite código do curso: <input type="text" name="cod_curso" id="cod_curso">
         <input type="submit" value="Inserir">

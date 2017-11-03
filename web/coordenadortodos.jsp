@@ -19,7 +19,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Lista de Usuários</h1>
+        <h1>Lista de Coordenadores</h1>
         <%
             List<Coordenador> coordenadores = dao.getAll();
             

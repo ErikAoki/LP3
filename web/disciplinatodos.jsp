@@ -19,7 +19,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Lista de Usuários</h1>
+        <h1>Lista de Disciplinas</h1>
         <%
             List<Disciplina> disciplinas = dao.getAll();
             
@@ -29,8 +29,8 @@
         } 
         
         for(Disciplina disciplina : disciplinas) {
-            out.println("Disciplina: " + disciplina.getNome_disciplina() + "<br> Código: " +
-                    disciplina.getCod_disciplina() + ".<br><br>");
+            out.println("Disciplina: " + disciplina.getNome_disciplina() + "<br> Código da discplina: " +
+                    disciplina.getCod_disciplina() + "<br> Código do curso a que pertence: "+ disciplina.getCod_curso() + ".<br><br>");
         }
         %><br>
         <form action="FrontController" method="post">

@@ -18,6 +18,7 @@ public class ResultadoController extends AbstractController {
 
     @Override
     public void execute() {
-        this.setReturnPage("/resultado.jsp");
+        String tipo = request.getParameter("tipo");
+        this.setReturnPage("/resultado"+tipo+".jsp");
     }
 }

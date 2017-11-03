@@ -16,6 +16,7 @@
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Resultado">
             <input type="hidden" name="opcao" value="alterar">
+            <input type="hidden" name="tipo" value="curso">
             Digite código do curso a ser alterado: <input type="text" name="cod_curso2" id="cod_curso2"><br>
             Digite nome novo do curso: <input type="text" name="nome_curso" id="nome_curso"><br>
             Digite código novo do curso: <input type="text" name="cod_curso" id="cod_curso">

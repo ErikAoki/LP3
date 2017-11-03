@@ -16,9 +16,10 @@
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Resultado">
             <input type="hidden" name="opcao" value="procurar">
-            Digite código da disciplina a ser procurada: <input type="text" name="cod_disciplina" id="cod_disciplina">
+            <input type="hidden" name="tipo" value="disciplina">
+            Digite código da disciplina a ser procurado: <input type="text" name="cod_disciplina" id="cod_disciplina">
         <input type="submit" value="Procurar">
-        </form>
+        </form><br>
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Index">
             <input type="submit" value="Voltar">
