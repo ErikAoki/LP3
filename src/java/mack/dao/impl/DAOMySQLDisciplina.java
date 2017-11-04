@@ -121,7 +121,7 @@ public class DAOMySQLDisciplina implements DAOFactory<Disciplina> {
         String nome_disciplina = disciplina.getNome_disciplina();
         int cod_curso = disciplina.getCod_curso();
         System.out.println(cod_disciplina + nome_disciplina);
-        String query = "UPDATE Disciplina SET cod_disciplina = " + cod_disciplina + ", cod_curso = '" + nome_disciplina + "', nome_disciplina = " + cod_curso + " WHERE (cod_disciplina = " + cod + ");";
+        String query = "UPDATE Disciplina SET cod_disciplina = " + cod_disciplina + ", cod_curso = " + cod_curso + ", nome_disciplina = '" + nome_disciplina + "' WHERE (cod_disciplina = " + cod + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();

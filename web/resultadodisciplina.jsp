@@ -13,6 +13,7 @@
     String cod_curso = request.getParameter("cod_curso");
     Disciplina a1 = new Disciplina(Integer.parseInt(codDisciplina), Integer.parseInt(cod_curso), nomeDisciplina);
     String resultado = "";
+    System.out.println("parte1");
    DAOMySQLDisciplina dao = new DAOMySQLDisciplina();
    if ("inserir".equals(opcao)) {
        if (dao.create(a1)==true) {
@@ -41,6 +42,7 @@
        if (a==null){
            resultado = "Não foi encontrado disciplina com esse código.";
        } else {
+           System.out.println("parte2");
            resultado = "O nome da disciplina é: " + a.getNome_disciplina() + ". "
                    + "E o código dela é: " + a.getCod_disciplina() + ".";
                    }
@@ -54,6 +56,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% out.print(resultado); %>
+        <% System.out.println("parte3");
+            out.print(resultado); %>
     </body>
 </html>
