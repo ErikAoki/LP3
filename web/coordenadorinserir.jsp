@@ -17,8 +17,8 @@
             <input type="hidden" name="control" value="Resultado">
             <input type="hidden" name="opcao" value="inserir">
             <input type="hidden" name="tipo" value="coordenador">
-            Digite nome do coordenador: <input type="text" name="nome_coord" id="nome_coord"><br>
-            Digite código do coordenador: <input type="text" name="cod_coord" id="cod_coord"><br>
+            Digite nome do coordenador: <input type="text" name="nome_coord" id="nome_coordenador"><br>
+            Digite código do coordenador: <input type="text" name="cod_coord" id="cod_coordenador"><br>
             Digite código do curso coordenado: <input type="text" name="cod_curso" id="cod_curso">
         <input type="submit" value="Inserir">
         </form>

@@ -13,7 +13,6 @@
     String cod_curso = request.getParameter("cod_curso");
     Disciplina a1 = new Disciplina(Integer.parseInt(codDisciplina), Integer.parseInt(cod_curso), nomeDisciplina);
     String resultado = "";
-    System.out.println("parte1");
    DAOMySQLDisciplina dao = new DAOMySQLDisciplina();
    if ("inserir".equals(opcao)) {
        if (dao.create(a1)==true) {

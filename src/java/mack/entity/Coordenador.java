@@ -10,30 +10,30 @@ package mack.entity;
  * @author AOKI
  */
 public class Coordenador {
-    private int cod_coord;
-    private String nome_coord;
+    private int cod_coordenador;
+    private String nome_coordenador;
     private int cod_curso;
 
-    public Coordenador(int cod_coord, String nome_coord, int cod_curso) {
-        this.cod_coord = cod_coord;
-        this.nome_coord = nome_coord;
+    public Coordenador(int cod_coordenador, String nome_coordenador, int cod_curso) {
+        this.cod_coordenador = cod_coordenador;
+        this.nome_coordenador = nome_coordenador;
         this.cod_curso = cod_curso;
     }
     
-    public int getCod_coord() {
-        return cod_coord;
+    public int getCod_coordenador() {
+        return cod_coordenador;
     }
 
     public void setCod_coord(int cod_coord) {
-        this.cod_coord = cod_coord;
+        this.cod_coordenador = cod_coordenador;
     }
 
-    public String getNome_coord() {
-        return nome_coord;
+    public String getNome_coordenador() {
+        return nome_coordenador;
     }
 
-    public void setNome_coord(String nome_coord) {
-        this.nome_coord = nome_coord;
+    public void setNome_coordenador(String nome_coordenador) {
+        this.nome_coordenador = nome_coordenador;
     }
 
     public int getCod_curso() {

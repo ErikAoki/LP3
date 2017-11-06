@@ -17,7 +17,7 @@
             <input type="hidden" name="control" value="Resultado">
             <input type="hidden" name="opcao" value="deletar">
             <input type="hidden" name="tipo" value="coordenador">
-            Digite código do coordenador a ser deletado: <input type="text" name="cod_coord" id="cod_coord">
+            Digite código do coordenador a ser deletado: <input type="text" name="cod_coord" id="cod_coordenador">
         <input type="submit" value="Deletar">
         </form>
         <form action="FrontController" method="post">

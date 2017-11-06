@@ -29,8 +29,8 @@
         } 
         
         for(Coordenador coordenador : coordenadores) {
-            out.println("Coordenador: " + coordenador.getNome_coord() + "<br> Código: " +
-                    coordenador.getCod_coord() + ".<br><br>");
+            out.println("Coordenador: " + coordenador.getNome_coordenador() + "<br> Código: " +
+                    coordenador.getCod_coordenador() + ".<br><br>");
         }
         %>
    

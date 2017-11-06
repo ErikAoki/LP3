@@ -34,11 +34,11 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
     }
     
     @Override
-    public boolean create(Coordenador coord) {
-        int cod_coord = coord.getCod_coord();
-        String nome_coord = coord.getNome_coord();
-        int cod_curso = coord.getCod_curso();
-        String query = "INSERT INTO Coordenador VALUES (" + cod_coord + ", '" + nome_coord + "'," + cod_curso + ");";
+    public boolean create(Coordenador coordenador) {
+        int cod_coordenador = coordenador.getCod_coordenador();
+        String nome_coordenador = coordenador.getNome_coordenador();
+        int cod_curso = coordenador.getCod_curso();
+        String query = "INSERT INTO Coordenador VALUES (" + cod_coordenador + ", '" + nome_coordenador + "'," + cod_curso + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -63,7 +63,7 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
     @Override
     public boolean delete(int cod) {
         
-        String query = "DELETE FROM Coordenador WHERE (cod_coord = " + cod + ");";
+        String query = "DELETE FROM Coordenador WHERE (cod_coordenador = " + cod + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -87,7 +87,7 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
 
     @Override
     public Coordenador read(int cod) {
-        String query = "SELECT * FROM Coordenador WHERE (cod_coord = " + cod + ");";
+        String query = "SELECT * FROM Coordenador WHERE (cod_coordenador = " + cod + ");";
         boolean achou = false;
         Connection conn = null;
             try {
@@ -95,14 +95,14 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             if(rs != null && rs.next()){
-                Coordenador a = new Coordenador(rs.getInt("cod_coord"), rs.getString("nome_coord"), rs.getInt("cod_curso"));
+                Coordenador a = new Coordenador(rs.getInt("cod_coordenador"), rs.getString("nome_coordenador"), rs.getInt("cod_curso"));
             }
-            Coordenador a = new Coordenador(rs.getInt("cod_coord"), rs.getString("nome_coord"), rs.getInt("cod_curso"));
+            Coordenador a = new Coordenador(rs.getInt("cod_coordenador"), rs.getString("nome_coordenador"), rs.getInt("cod_curso"));
             conn.close();
             return a;
         } catch (Exception ex) {
             ex.printStackTrace();
-            String erro = "Não foi encontrado coordenador com esse código.";
+            String erro = "Não foi encontrado coordenadorenador com esse código.";
             System.out.println(erro);
         } finally {
             if(conn != null)
@@ -116,12 +116,12 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
     };
 
     @Override
-    public boolean update(int cod, Coordenador coord) {
-        int cod_coord = coord.getCod_coord();
-        String nome_coord = coord.getNome_coord();
-        int cod_curso = coord.getCod_curso();
-        System.out.println(cod_coord + nome_coord);
-        String query = "UPDATE Coordenador SET cod_coord = " + cod_coord + ", nome_coord = '" + nome_coord + "', cod_curso = " + cod_curso + " (cod_coord = " + cod + ");";
+    public boolean update(int cod, Coordenador coordenador) {
+        int cod_coordenador = coordenador.getCod_coordenador();
+        String nome_coordenador = coordenador.getNome_coordenador();
+        int cod_curso = coordenador.getCod_curso();
+        System.out.println(cod_coordenador + nome_coordenador);
+        String query = "UPDATE Coordenador SET cod_coordenador = " + cod_coordenador + ", nome_coordenador = '" + nome_coordenador + "', cod_curso = " + cod_curso + " (cod_coordenador = " + cod + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -156,7 +156,7 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
             List<Coordenador> result = new ArrayList();
             
             while(rs.next()) {
-                Coordenador a = new Coordenador(rs.getInt("cod_coord"), rs.getString("nome_coord"), rs.getInt("cod_curso"));
+                Coordenador a = new Coordenador(rs.getInt("cod_coordenador"), rs.getString("nome_coordenador"), rs.getInt("cod_curso"));
                 result.add(a);
             }
             conn.close();
