@@ -22,7 +22,7 @@
             <input type="hidden" name="tipo" value="disciplina">
             Digite código da disciplina a ser alterada: <input type="text" name="cod_disciplina2" id="cod_disciplina2"><br>
             Digite nome novo da disciplina: <input type="text" name="nome_disciplina" id="nome_disciplina"><br>
-            Digite código novo da disciplina: <input type="text" name="cod_disciplina" id="cod_disciplina">
+            Digite código novo da disciplina: <input type="text" name="cod_disciplina" id="cod_disciplina"><br>
             Digite código novo do curso a que pertence: <input type="text" name="cod_curso" id="cod_curso">
         <input type="submit" value="Alterar">
         </form>

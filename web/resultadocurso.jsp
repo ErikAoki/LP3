@@ -41,7 +41,7 @@
            resultado = "Não foi encontrado curso com esse código.";
        } else {
            resultado = "O nome do curso é: " + a.getNome_curso() + ". "
-                   + "E o código dele é: " + a.getCod_curso() + ".";
+                   + "<br>E o código dele é: " + a.getCod_curso() + ".";
                    }
        }
     %>

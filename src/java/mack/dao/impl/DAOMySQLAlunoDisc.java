@@ -14,13 +14,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import mack.entity.Coordenador;
+import mack.entity.AlunoDisc;
 
 /**
  *
  * @author AOKI
  */
-public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
+public class DAOMySQLAlunoDisc implements DAOFactory<AlunoDisc> {
     private final String url = "jdbc:mysql://localhost:3306/meubd";
     private final String user = "root";
     private final String password = "140194";
@@ -34,11 +34,11 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
     }
     
     @Override
-    public boolean create(Coordenador coordenador) {
-        int cod_coordenador = coordenador.getCod_coordenador();
-        String nome_coordenador = coordenador.getNome_coordenador();
-        int cod_curso = coordenador.getCod_curso();
-        String query = "INSERT INTO Coordenador VALUES (" + cod_coordenador + ", '" + nome_coordenador + "'," + cod_curso + ");";
+    public boolean create(AlunoDisc alunodisc) {
+        int cod_aluno = alunodisc.getCod_aluno();
+        int cod_disciplina = alunodisc.getCod_disciplina();
+        int nota = alunodisc.getNota();
+        String query = "INSERT INTO Aluno_Disc VALUES (" + cod_aluno + ", " + cod_disciplina + "," + nota + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -63,7 +63,7 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
     @Override
     public boolean delete(int cod) {
         
-        String query = "DELETE FROM Coordenador WHERE (cod_coordenador = " + cod + ");";
+        String query = "DELETE FROM Aluno_Disc WHERE (cod_aluno = " + cod + ");";
         Connection conn = null;
         try {
             conn = this.getConnection();
@@ -86,8 +86,8 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
     };
 
     @Override
-    public Coordenador read(int cod) {
-        String query = "SELECT * FROM Coordenador WHERE (cod_coordenador = " + cod + ");";
+    public AlunoDisc read(int cod) {
+        String query = "SELECT * FROM Aluno_Disc WHERE (cod_aluno = " + cod + ");";
         boolean achou = false;
         Connection conn = null;
             try {
@@ -95,14 +95,14 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             if(rs != null && rs.next()){
-                Coordenador a = new Coordenador(rs.getInt("cod_coordenador"), rs.getString("nome_coordenador"), rs.getInt("cod_curso"));
+                AlunoDisc a = new AlunoDisc(rs.getInt("cod_aluno"), rs.getInt("cod_disciplina"), rs.getInt("nota"));
             }
-            Coordenador a = new Coordenador(rs.getInt("cod_coordenador"), rs.getString("nome_coordenador"), rs.getInt("cod_curso"));
+            AlunoDisc a = new AlunoDisc(rs.getInt("cod_aluno"), rs.getInt("cod_disciplina"), rs.getInt("nota"));
             conn.close();
             return a;
         } catch (Exception ex) {
             ex.printStackTrace();
-            String erro = "Não foi encontrado coordenador com esse código.";
+            String erro = "Não foi encontrado aluno com esse código.";
             System.out.println(erro);
         } finally {
             if(conn != null)
@@ -116,14 +116,13 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
     };
 
     @Override
-    public boolean update(int cod, Coordenador coordenador) {
-        int cod_coordenador = coordenador.getCod_coordenador();
-        String nome_coordenador = coordenador.getNome_coordenador();
-        int cod_curso = coordenador.getCod_curso();
-        System.out.println(cod_coordenador + nome_coordenador);
-        String query = "UPDATE Coordenador SET cod_coordenador = " + 
-                cod_coordenador + ", nome_coordenador = '" + nome_coordenador 
-                + "', cod_curso = " + cod_curso + " WHERE cod_coordenador = " 
+    public boolean update(int cod, AlunoDisc alunodisc) {
+        int cod_aluno = alunodisc.getCod_aluno();
+        int cod_disciplina = alunodisc.getCod_disciplina();
+        int nota = alunodisc.getNota();
+        String query = "UPDATE Aluno_Disc SET cod_aluno = " + 
+                cod_aluno + ", cod_disciplina = " + cod_disciplina 
+                + ", nota = " + nota + " WHERE cod_aluno = " 
                 + cod + ";";
         Connection conn = null;
         try {
@@ -147,8 +146,8 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
     }
 
     @Override
-    public List<Coordenador> getAll() {
-        String query = "SELECT * FROM Coordenador;";
+    public List<AlunoDisc> getAll() {
+        String query = "SELECT * FROM Aluno_Disc;";
         
         Connection conn = null;
         try {
@@ -156,10 +155,10 @@ public class DAOMySQLCoordenador implements DAOFactory<Coordenador> {
             Statement stmt = conn.createStatement();
             ResultSet rs = stmt.executeQuery(query);
             
-            List<Coordenador> result = new ArrayList();
+            List<AlunoDisc> result = new ArrayList();
             
             while(rs.next()) {
-                Coordenador a = new Coordenador(rs.getInt("cod_coordenador"), rs.getString("nome_coordenador"), rs.getInt("cod_curso"));
+                AlunoDisc a = new AlunoDisc(rs.getInt("cod_aluno"), rs.getInt("cod_disciplina"), rs.getInt("nota"));
                 result.add(a);
             }
             conn.close();

@@ -15,10 +15,12 @@
     <body>
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Resultado">
-            <input type="hidden" name="opcao" value="deletar">
-            <input type="hidden" name="tipo" value="coordenador">
-            Digite código do coordenador a ser deletado: <input type="text" name="cod_coordenador" id="cod_coordenador">
-        <input type="submit" value="Deletar">
+            <input type="hidden" name="opcao" value="inserir">
+            <input type="hidden" name="tipo" value="alunodisc">
+            Digite código do aluno: <input type="text" name="cod_aluno" id="cod_aluno"><br>
+            Digite código da disciplina: <input type="text" name="cod_disciplina" id="cod_disciplina"><br>
+            Digite nota do aluno: <input type="text" name="nota_aluno" id="nota_aluno">
+        <input type="submit" value="Inserir">
         </form>
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Index">

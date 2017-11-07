@@ -16,35 +16,36 @@
    if ("inserir".equals(opcao)) {
        Disciplina a1 = new Disciplina(Integer.parseInt(codDisciplina), Integer.parseInt(cod_curso), nomeDisciplina);
        if (dao.create(a1)==true) {
-       resultado = "Disciplina inserido com sucesso.";
+       resultado = "Disciplina inserida com sucesso.";
        } else {
-       resultado = "Disciplina não foi inserido com sucesso.";
+       resultado = "Disciplina não foi inserida com sucesso.";
        }
    }
    if ("alterar".equals(opcao)) {
        Disciplina a1 = new Disciplina(Integer.parseInt(codDisciplina), Integer.parseInt(cod_curso), nomeDisciplina);
        if (dao.update(Integer.parseInt(codAlterar), a1) == true) {
-           resultado = "Disciplina alterado com sucesso.";
+           resultado = "Disciplina alterada com sucesso.";
        } else {
-           resultado = "Disciplina não foi alterado com sucesso.";
+           resultado = "Disciplina não foi alterada com sucesso.";
        }
    }
    if ("deletar".equals(opcao)) {
        if (dao.delete(Integer.parseInt(codDisciplina)) == true) {
-           resultado = "Disciplina deletado com sucesso.";
+           resultado = "Disciplina deletada com sucesso.";
        } else {
-           resultado = "Disciplina não foi deletado com sucesso.";
+           resultado = "Disciplina não foi deletada com sucesso.";
        }
    }
    
    if ("procurar".equals(opcao)) {
        Disciplina a = dao.read(Integer.parseInt(codDisciplina));
        if (a==null){
-           resultado = "Não foi encontrado disciplina com esse código.";
+           resultado = "Não foi encontrada disciplina com esse código.";
        } else {
            System.out.println("parte2");
            resultado = "O nome da disciplina é: " + a.getNome_disciplina() + ". "
-                   + "E o código dela é: " + a.getCod_disciplina() + ".";
+                   + "<br>E o código dela é: " + a.getCod_disciplina() + "." +
+                   "<br>E o código do curso dela é: " + a.getCod_curso()+".";
                    }
        }
     %>

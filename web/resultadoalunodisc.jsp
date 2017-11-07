@@ -4,16 +4,18 @@
     Author     : AOKI
 --%>
 <%@page import="java.util.List"%>
-<%@page import="mack.entity.Aluno"%>
-<%@page import="mack.dao.impl.DAOMySQL"%>
+<%@page import="mack.entity.AlunoDisc"%>
+<%@page import="mack.dao.impl.DAOMySQLAlunoDisc"%>
 <%  String opcao = request.getParameter("opcao");
-    String nomeAluno = request.getParameter("nome_aluno");
-    String codAluno = request.getParameter("cod_aluno");
-    String codAlterar = request.getParameter("cod_aluno2");
-    Aluno a1 = new Aluno(Integer.parseInt(codAluno), nomeAluno);
+    String cod_aluno = request.getParameter("cod_aluno");
+    String cod_disciplina = request.getParameter("cod_disciplina");
+    String nota = request.getParameter("nota_aluno");
+    String cod_aluno2 = request.getParameter("cod_aluno2");
     String resultado = "";
-   DAOMySQL dao = new DAOMySQL();
+   DAOMySQLAlunoDisc dao = new DAOMySQLAlunoDisc();
    if ("inserir".equals(opcao)) {
+       AlunoDisc a1 = new AlunoDisc(Integer.parseInt(cod_aluno), 
+               Integer.parseInt(cod_disciplina), Integer.parseInt(nota));
        if (dao.create(a1)==true) {
        resultado = "Aluno inserido com sucesso.";
        } else {
@@ -21,14 +23,16 @@
        }
    }
    if ("alterar".equals(opcao)) {
-       if (dao.update(Integer.parseInt(codAlterar), a1) == true) {
+       AlunoDisc a1 = new AlunoDisc(Integer.parseInt(cod_aluno), 
+               Integer.parseInt(cod_disciplina), Integer.parseInt(nota));
+       if (dao.update(Integer.parseInt(cod_aluno), a1) == true) {
            resultado = "Aluno alterado com sucesso.";
        } else {
            resultado = "Aluno não foi alterado com sucesso.";
        }
    }
    if ("deletar".equals(opcao)) {
-       if (dao.delete(Integer.parseInt(codAluno)) == true) {
+       if (dao.delete(Integer.parseInt(cod_aluno)) == true) {
            resultado = "Aluno deletado com sucesso.";
        } else {
            resultado = "Aluno não foi deletado com sucesso.";
@@ -36,12 +40,13 @@
    }
    
    if ("procurar".equals(opcao)) {
-       Aluno a = dao.read(Integer.parseInt(codAluno));
+       AlunoDisc a = dao.read(Integer.parseInt(cod_aluno));
        if (a==null){
            resultado = "Não foi encontrado aluno com esse código.";
        } else {
-           resultado = "O nome do aluno é: " + a.getNome_aluno() + ". "
-                   + "<br>E o código dele é: " + a.getCod_aluno() + ".";
+           resultado = "O código do aluno é: " + a.getCod_aluno() + ". "
+                   + "<br>E o código da disciplina é: " + a.getCod_disciplina()
+                   +".<br>E a nota é: " + a.getNota()+".";
                    }
        }
     %>

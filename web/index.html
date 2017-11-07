@@ -10,19 +10,21 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
+    <body style="background-color:powderblue;">
         <div>
             <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Classe" />
             Escolha uma categoria mudança:
             <br>Aluno
             <input type="radio" name="opcao" value="aluno"><br>
+            Inserir aluno/disc/nota
+            <input type="radio" name="opcao" value="alunodisc"><br>
+            Coordenador
+            <input type="radio" name="opcao" value="coordenador"><br>
             Disciplina
             <input type="radio" name="opcao" value="disciplina"><br>
             Curso
             <input type="radio" name="opcao" value="curso"><br>
-            Coordenador
-            <input type="radio" name="opcao" value="coordenador"><br>
             <input type="submit" name="OK" value="Enviar">
             </form>
         </div>

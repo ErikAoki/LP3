@@ -30,5 +30,8 @@ public class ClasseController extends AbstractController {
         if ("coordenador".equals(opcao)) {
             this.setReturnPage("/coordenador.jsp");
         }
+        if ("alunodisc".equals(opcao)) {
+            this.setReturnPage("/alunodisc.jsp");
+        }
     }
 }

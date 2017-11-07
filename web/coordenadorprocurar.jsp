@@ -17,7 +17,7 @@
             <input type="hidden" name="control" value="Resultado">
             <input type="hidden" name="opcao" value="procurar">
             <input type="hidden" name="tipo" value="coordenador">
-            Digite código do coordenador a ser procurado: <input type="text" name="cod_coord" id="cod_coordenador">
+            Digite código do coordenador a ser procurado: <input type="text" name="cod_coordenador" id="cod_coordenador">
         <input type="submit" value="Procurar">
         </form>
         <form action="FrontController" method="post">
