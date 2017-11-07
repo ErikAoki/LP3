@@ -11,10 +11,10 @@
     String codCoordenador = request.getParameter("cod_coordenador");
     String codAlterar = request.getParameter("cod_coordenador2");
     String cod_curso = request.getParameter("cod_curso");
-    Coordenador a1 = new Coordenador(Integer.parseInt(codCoordenador), nomeCoordenador, Integer.parseInt(cod_curso));
     String resultado = "";
    DAOMySQLCoordenador dao = new DAOMySQLCoordenador();
    if ("inserir".equals(opcao)) {
+       Coordenador a1 = new Coordenador(Integer.parseInt(codCoordenador), nomeCoordenador, Integer.parseInt(cod_curso));
        if (dao.create(a1)==true) {
        resultado = "Coordenador inserido com sucesso.";
        } else {
@@ -22,6 +22,7 @@
        }
    }
    if ("alterar".equals(opcao)) {
+       Coordenador a1 = new Coordenador(Integer.parseInt(codCoordenador), nomeCoordenador, Integer.parseInt(cod_curso));
        if (dao.update(Integer.parseInt(codAlterar), a1) == true) {
            resultado = "Coordenador alterado com sucesso.";
        } else {

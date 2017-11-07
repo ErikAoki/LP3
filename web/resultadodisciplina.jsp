@@ -11,10 +11,10 @@
     String codDisciplina = request.getParameter("cod_disciplina");
     String codAlterar = request.getParameter("cod_disciplina2");
     String cod_curso = request.getParameter("cod_curso");
-    Disciplina a1 = new Disciplina(Integer.parseInt(codDisciplina), Integer.parseInt(cod_curso), nomeDisciplina);
     String resultado = "";
    DAOMySQLDisciplina dao = new DAOMySQLDisciplina();
    if ("inserir".equals(opcao)) {
+       Disciplina a1 = new Disciplina(Integer.parseInt(codDisciplina), Integer.parseInt(cod_curso), nomeDisciplina);
        if (dao.create(a1)==true) {
        resultado = "Disciplina inserido com sucesso.";
        } else {
@@ -22,6 +22,7 @@
        }
    }
    if ("alterar".equals(opcao)) {
+       Disciplina a1 = new Disciplina(Integer.parseInt(codDisciplina), Integer.parseInt(cod_curso), nomeDisciplina);
        if (dao.update(Integer.parseInt(codAlterar), a1) == true) {
            resultado = "Disciplina alterado com sucesso.";
        } else {
