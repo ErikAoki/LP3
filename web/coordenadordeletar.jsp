@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -18,7 +20,7 @@
             <input type="hidden" name="opcao" value="deletar">
             <input type="hidden" name="tipo" value="coordenador">
             Digite código do coordenador a ser deletado: <input type="text" name="cod_coordenador" id="cod_coordenador">
-        <input type="submit" value="Deletar">
+        <input class="btn btn-primary" type="submit" name="OK" value="Deletar">
         </form>
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Index">

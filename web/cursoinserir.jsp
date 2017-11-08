@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -19,7 +21,7 @@
             <input type="hidden" name="tipo" value="curso">
             Digite nome do curso: <input type="text" name="nome_curso" id="nome_curso"><br>
             Digite código do curso: <input type="text" name="cod_curso" id="cod_curso">
-        <input type="submit" value="Inserir">
+        <input class="btn btn-primary" type="submit" name="OK" value="Inserir">
         </form>
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Index">

@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -20,7 +22,7 @@
             Digite código do curso a ser alterado: <input type="text" name="cod_curso2" id="cod_curso2"><br>
             Digite nome novo do curso: <input type="text" name="nome_curso" id="nome_curso"><br>
             Digite código novo do curso: <input type="text" name="cod_curso" id="cod_curso">
-        <input type="submit" value="Alterar">
+        <input class="btn btn-primary" type="submit" name="OK" value="Alterar">
         </form>
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Index">

@@ -9,6 +9,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
@@ -21,7 +23,7 @@
             Digite nome novo do coordenador: <input type="text" name="nome_coordenador" id="nome_coordenador"><br>
             Digite código novo do coordenador: <input type="text" name="cod_coordenador" id="cod_coordenador"><br>
             Digite código novo do curso a ser coordenado: <input type="text" name="cod_curso" id="cod_curso">
-        <input type="submit" value="Alterar">
+        <input class="btn btn-primary" type="submit" name="OK" value="Alterar">
         </form>
         <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Index">

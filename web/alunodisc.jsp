@@ -6,6 +6,8 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +31,7 @@ and open the template in the editor.
             <input type="radio" name="opcao" value="deletar"><br>
             Ver todos os alunos/disciplina
             <input type="radio" name="opcao" value="todos"><br>
-            <input type="submit" name="OK" value="Enviar">
+            <input class="btn btn-primary" type="submit" name="OK" value="Enviar">
             </form>
             <form action="FrontController" method="post">
             <input type="hidden" name="control" value="Index">

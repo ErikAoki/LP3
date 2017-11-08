@@ -6,27 +6,57 @@ and open the template in the editor.
 -->
 <html>
     <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
+              integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body style="background-color:powderblue;">
-        <div>
-            <form action="FrontController" method="post">
-            <input type="hidden" name="control" value="Classe" />
-            Escolha uma categoria mudança:
-            <br>Aluno
-            <input type="radio" name="opcao" value="aluno"><br>
-            Inserir aluno/disc/nota
-            <input type="radio" name="opcao" value="alunodisc"><br>
-            Coordenador
-            <input type="radio" name="opcao" value="coordenador"><br>
-            Disciplina
-            <input type="radio" name="opcao" value="disciplina"><br>
-            Curso
-            <input type="radio" name="opcao" value="curso"><br>
-            <input type="submit" name="OK" value="Enviar">
-            </form>
+    <body>
+        <div class="mx-auto" style="width: 200px;" class="card-header">
+            <h5>Escolha uma opção.</h5>
         </div>
+            <nav class="navbar navbar-light bg-light">
+            <form action="FrontController" method="post" >
+                <fieldset class="form-group">
+                    <div class="row">
+                                <input class="form-check-input" type="hidden" name="control" value="Classe" />
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" id="gridRadios1" type="radio" name="opcao" value="aluno">
+                                    Aluno
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" id="gridRadios1" type="radio" name="opcao" value="alunodisc">
+                                    Nota
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" id="gridRadios1" type="radio" name="opcao" value="coordenador">
+                                    Coordenador
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" id="gridRadios1" type="radio" name="opcao" value="disciplina">
+                                    Disciplina
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" id="gridRadios1" type="radio" name="opcao" value="curso">
+                                    Curso
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+                <input class="btn btn-primary" type="submit" name="OK" value="Enviar">
+            </form>
+            </nav>
     </body>
 </html>
