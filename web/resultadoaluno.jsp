@@ -55,6 +55,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <% out.print(resultado); %>
+        <%out.print("<h2 class=\"text-center\">" + resultado + "</h2>"); %>
     </body>
 </html>

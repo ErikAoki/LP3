@@ -19,6 +19,9 @@ public class Pagina2Controller extends AbstractController {
     public void execute() {
         String tipo = request.getParameter("tipo");
         String opcao = request.getParameter("opcao");
+        if (opcao==null) {
+            this.setReturnPage("/"+tipo+".jsp");
+        }
         if ("inserir".equals(opcao)) {
             this.setReturnPage("/"+tipo+"inserir.jsp");
     }

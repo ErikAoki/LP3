@@ -19,25 +19,23 @@
         <h4 class="text-center">Alterar aluno</h4>
         <br>
         <form class="container" action="FrontController" method="post">
-            <div class="form-group row">
+            <div class="form-group">
                 <input type="hidden" name="opcao" value="alterar">
                 <input type="hidden" name="tipo" value="aluno">
-                <label for="cod_aluno2" class="col-sm-2 col-form-label">Código do aluno a ser alterado: </label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="cod_aluno2" id="cod_aluno2">
+                <div class="form-group">
+                    <label class="col-form-label" for="cod_aluno2">Código do aluno a ser alterado: </label>
+                    <input type="text" class="form-control" name="cod_aluno2" id="cod_aluno2" placeholder="Código do aluno a ser alterado">
                 </div>
-                <label for="cod_aluno2" class="col-sm-2 col-form-label">Digite nome novo do aluno: </label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="nome_aluno" id="nome_aluno">
+                <div class="form-group">
+                    <label class="col-form-label" for="nome_aluno">Nome novo do aluno: </label>
+                    <input type="text" class="form-control" name="nome_aluno" id="nome_aluno" placeholder="Nome novo do aluno">
                 </div>
-                <label for="cod_aluno2" class="col-sm-2 col-form-label">Digite código novo do aluno: </label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" name="cod_aluno" id="cod_aluno">
+                <div class="form-group">
+                    <label class="col-form-label" for="cod_aluno">Código novo do aluno: </label>
+                    <input type="text" class="form-control" name="cod_aluno" id="cod_aluno" placeholder="Código novo do aluno">
                 </div>
-                <div class="container">
                 <button class="btn btn-outline-primary" type="submit" name="control" value="Resultado">Enviar</button>
-                <button class="btn btn-outline-primary" type="submit" name="control" value="Index">Voltar</button>
-                </div>
+                <button class="btn btn-outline-primary" type="submit" name="control" value="Voltar">Voltar</button>
             </div>
         </form>
     </body>

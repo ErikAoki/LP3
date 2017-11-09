@@ -15,17 +15,24 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="FrontController" method="post">
-            <input type="hidden" name="control" value="Resultado">
-            <input type="hidden" name="opcao" value="inserir">
-            <input type="hidden" name="tipo" value="aluno">
-            Digite nome do aluno: <input type="text" name="nome_aluno" id="nome_aluno"><br>
-            Digite código do aluno: <input type="text" name="cod_aluno" id="cod_aluno">
-        <input class="btn btn-primary" type="submit" name="OK" value="Inserir">
-        </form>
-        <form action="FrontController" method="post">
-            <input type="hidden" name="control" value="Index">
-            <input type="submit" value="Voltar">
+        <br>
+        <h4 class="text-center">Inserir aluno</h4>
+        <br>
+        <form class="container" action="FrontController" method="post">
+            <div class="form-group">
+                <input type="hidden" name="opcao" value="inserir">
+                <input type="hidden" name="tipo" value="aluno">
+                <div class="form-group">
+                    <label class="col-form-label" for="nome_aluno">Nome do aluno a ser inserido: </label>
+                    <input type="text" class="form-control" name="nome_aluno" id="nome_aluno" placeholder="Nome do aluno">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="cod_aluno">Código do aluno a ser inserido: </label>
+                    <input type="text" class="form-control" name="cod_aluno" id="cod_aluno" placeholder="Código do aluno">
+                </div>
+                <button class="btn btn-outline-primary" type="submit" name="control" value="Resultado">Enviar</button>
+                <button class="btn btn-outline-primary" type="submit" name="control" value="Voltar">Voltar</button>
+            </div>
         </form>
     </body>
 </html>

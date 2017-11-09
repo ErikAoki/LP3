@@ -21,23 +21,30 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Lista de Alunos</h1>
+        <h4 class="text-center">Lista de Alunos</h4>
+        <br>
+        <div class="container">
+            <div class="form-group">
         <%
             List<Aluno> alunos = dao.getAll();
             
             if(alunos == null) {
-            System.out.println("Problema ao tentar buscar os alunos");
+            System.out.println("<h5 class=\"text-center\">Problema ao tentar buscar os alunos</h5>");
             return;
         } 
         
         for(Aluno aluno : alunos) {
-            out.println("Aluno: " + aluno.getNome_aluno() + "<br> Código: " +
-                    aluno.getCod_aluno() + ".<br><br>");
+            out.println("<h6 class=\"text-center\"> Aluno: " + aluno.getNome_aluno() + "</h6><h6 class=\"text-center\"> Código: " +
+                    aluno.getCod_aluno() + ".</h6><br>");
         }
         %><br>
-        <form action="FrontController" method="post">
-            <input type="hidden" name="control" value="Index">
-            <input type="submit" value="Voltar">
+        <form class="container" action="FrontController" method="post">
+                <div class="col-md-4 text-center">
+                    <input type="hidden" name="tipo" value="aluno">
+                    <button class="btn btn-outline-primary" type="submit" name="control" value="Voltar">Voltar</button>
+                </div>
         </form>
+            </div>
+        </div>
     </body>
 </html>
