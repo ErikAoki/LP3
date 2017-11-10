@@ -21,7 +21,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h4 class="text-center">Lista de Alunos/disciplina/nota</h4>
+        <h4 class="text-center">Lista de Alunos/disciplinas/notas</h4>
         <br>
             <div class="form-group">
         <%
