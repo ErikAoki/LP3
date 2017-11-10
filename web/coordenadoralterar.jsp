@@ -11,23 +11,36 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
               integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html;" charset="UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="FrontController" method="post">
-            <input type="hidden" name="control" value="Resultado">
-            <input type="hidden" name="opcao" value="alterar">
-            <input type="hidden" name="tipo" value="coordenador">
-            Digite código do coordenador a ser alterado: <input type="text" name="cod_coordenador2" id="cod_coordenador2"><br>
-            Digite nome novo do coordenador: <input type="text" name="nome_coordenador" id="nome_coordenador"><br>
-            Digite código novo do coordenador: <input type="text" name="cod_coordenador" id="cod_coordenador"><br>
-            Digite código novo do curso a ser coordenado: <input type="text" name="cod_curso" id="cod_curso">
-        <input class="btn btn-primary" type="submit" name="OK" value="Alterar">
-        </form>
-        <form action="FrontController" method="post">
-            <input type="hidden" name="control" value="Index">
-            <input type="submit" value="Voltar">
+        <br>
+        <h4 class="text-center">Alterar coordenador</h4>
+        <br>
+        <form class="container" action="FrontController" method="post">
+            <div class="form-group">
+                <input type="hidden" name="opcao" value="alterar">
+                <input type="hidden" name="tipo" value="coordenador">
+                <div class="form-group">
+                    <label class="col-form-label" for="cod_coordenador2">Código do coordenador a ser alterado: </label>
+                    <input type="text" class="form-control" name="cod_coordenador2" id="cod_coordenador2" placeholder="Código do coordenador a ser alterado">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="nome_coordenador">Novo nome do coordenador: </label>
+                    <input type="text" class="form-control" name="nome_coordenador" id="nome_coordenador" placeholder="Novo nome do coordenador">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="cod_coordenador">Novo código do coordenador: </label>
+                    <input type="text" class="form-control" name="cod_coordenador" id="cod_coordenador" placeholder="Novo código do coordenador">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="cod_curso">Novo código do curso: </label>
+                    <input type="text" class="form-control" name="cod_curso" id="cod_curso" placeholder="Novo código do curso">
+                </div>
+                <button class="btn btn-outline-primary" type="submit" name="control" value="Resultado">Enviar</button>
+                <button class="btn btn-outline-primary" type="submit" name="control" value="Voltar">Voltar</button>
+            </div>
         </form>
     </body>
 </html>

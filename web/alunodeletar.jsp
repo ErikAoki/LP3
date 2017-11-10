@@ -11,12 +11,12 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
               integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
         <br>
-        <h4 class="text-center">Alterar aluno</h4>
+        <h4 class="text-center">Deletar aluno</h4>
         <br>
         <form class="container" action="FrontController" method="post">
             <div class="form-group">

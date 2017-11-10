@@ -17,32 +17,32 @@
        AlunoDisc a1 = new AlunoDisc(Integer.parseInt(cod_aluno), 
                Integer.parseInt(cod_disciplina), Integer.parseInt(nota));
        if (dao.create(a1)==true) {
-       resultado = "Aluno inserido com sucesso.";
+       resultado = "Aluno/disciplina/nota inserido com sucesso.";
        } else {
-       resultado = "Aluno não foi inserido com sucesso.";
+       resultado = "Aluno/disciplina/nota não foi inserido com sucesso.";
        }
    }
    if ("alterar".equals(opcao)) {
        AlunoDisc a1 = new AlunoDisc(Integer.parseInt(cod_aluno), 
                Integer.parseInt(cod_disciplina), Integer.parseInt(nota));
        if (dao.update(Integer.parseInt(cod_aluno), a1) == true) {
-           resultado = "Aluno alterado com sucesso.";
+           resultado = "Aluno/disciplina/nota alterado com sucesso.";
        } else {
-           resultado = "Aluno não foi alterado com sucesso.";
+           resultado = "Aluno/disciplina/nota não foi alterado com sucesso.";
        }
    }
    if ("deletar".equals(opcao)) {
        if (dao.delete(Integer.parseInt(cod_aluno)) == true) {
-           resultado = "Aluno deletado com sucesso.";
+           resultado = "Aluno/disciplina/nota deletado com sucesso.";
        } else {
-           resultado = "Aluno não foi deletado com sucesso.";
+           resultado = "Aluno/disciplina/nota não foi deletado com sucesso.";
        }
    }
    
    if ("procurar".equals(opcao)) {
        AlunoDisc a = dao.read(Integer.parseInt(cod_aluno));
        if (a==null){
-           resultado = "Não foi encontrado aluno com esse código.";
+           resultado = "Não foi encontrado Aluno/disciplina/nota com esse código.";
        } else {
            resultado = "O código do aluno é: " + a.getCod_aluno() + ". "
                    + "<br>E o código da disciplina é: " + a.getCod_disciplina()
@@ -56,10 +56,10 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
               integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <% out.print(resultado); %>
+        <%out.print("<h2 class=\"text-center\">" + resultado + "</h2>"); %>
     </body>
 </html>

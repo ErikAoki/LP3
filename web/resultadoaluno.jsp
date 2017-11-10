@@ -55,6 +55,6 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%out.print("<h2 class=\"text-center\">" + resultado + "</h2>"); %>
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
     </body>
 </html>

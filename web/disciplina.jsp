@@ -1,39 +1,59 @@
+<%-- 
+    Document   : pagina1
+    Created on : 25/08/2017, 09:25:51
+    Author     : 31661459
+--%>
+<%@page import="java.time.Period"%>
+<%@page import="java.time.LocalDate"%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
               integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+        <title>JSP Page</title>
     </head>
     <body>
-        <div>
-            <form action="FrontController" method="post">
-            <input type="hidden" name="control" value="Pagina2" />
-            <input type="hidden" name="tipo" value="disciplina">
-            Você deseja: 
-            <br>Inserir disciplina
-            <input type="radio" name="opcao" value="inserir"><br>
-            Procurar disciplina
-            <input type="radio" name="opcao" value="procurar"><br>
-            Alterar disciplina
-            <input type="radio" name="opcao" value="alterar"><br>
-            Deletar disciplina
-            <input type="radio" name="opcao" value="deletar"><br>
-            Ver todas as disciplinas
-            <input type="radio" name="opcao" value="todos"><br>
-            <input class="btn btn-primary" type="submit" name="OK" value="Enviar">
-            </form>
-            <form action="FrontController" method="post">
-            <input type="hidden" name="control" value="Index">
-            <input type="submit" value="Voltar">
+        <br>
+        <h4 class="text-center">O que vocÃª deseja fazer?</h4>
+        <br>
+        <form class="container" action="FrontController" method="post">
+            <div class="form-group">
+                <input type="hidden" name="tipo" value="disciplina">
+                <div class="form-check">
+                    <label class="form-check-label">
+                      <input class="form-check-input" type="radio" name="opcao" value="inserir">
+                      Inserir disciplina
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="opcao" value="procurar">
+                        Procurar disciplina
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="opcao" value="alterar">
+                        Alterar disciplina
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="opcao" value="deletar">
+                        Deletar disciplina
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input class="form-check-input" type="radio" name="opcao" value="todos">
+                        Ver todas as disciplinas
+                    </label>
+                </div>
+                <button class="btn btn-outline-primary" type="submit" name="control" value="Pagina2">Enviar</button>
+                <button class="btn btn-outline-primary" type="submit" name="control" value="Index">Voltar</button>
+            </div>
         </form>
-        </div>
     </body>
 </html>

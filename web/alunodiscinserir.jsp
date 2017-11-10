@@ -11,22 +11,32 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
               integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="FrontController" method="post">
-            <input type="hidden" name="control" value="Resultado">
-            <input type="hidden" name="opcao" value="inserir">
-            <input type="hidden" name="tipo" value="alunodisc">
-            Digite código do aluno: <input type="text" name="cod_aluno" id="cod_aluno"><br>
-            Digite código da disciplina: <input type="text" name="cod_disciplina" id="cod_disciplina"><br>
-            Digite nota do aluno: <input type="text" name="nota_aluno" id="nota_aluno">
-        <input class="btn btn-primary" type="submit" name="OK" value="Inserir">
-        </form>
-        <form action="FrontController" method="post">
-            <input type="hidden" name="control" value="Index">
-            <input type="submit" value="Voltar">
+        <br>
+        <h4 class="text-center">Inserir aluno/disciplina/nota</h4>
+        <br>
+        <form class="container" action="FrontController" method="post">
+            <div class="form-group">
+                <input type="hidden" name="opcao" value="inserir">
+                <input type="hidden" name="tipo" value="alunodisc">
+                <div class="form-group">
+                    <label class="col-form-label" for="cod_aluno">Código do aluno a ser inserido: </label>
+                    <input type="text" class="form-control" name="cod_aluno" id="cod_aluno" placeholder="Código do aluno">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="cod_disciplina">Código da disciplina a ser inserida: </label>
+                    <input type="text" class="form-control" name="cod_disciplina" id="cod_disciplina" placeholder="Código da disciplina">
+                </div>
+                <div class="form-group">
+                    <label class="col-form-label" for="nota_aluno">Nota do aluno a ser inserido: </label>
+                    <input type="text" class="form-control" name="nota_aluno" id="nota_aluno" placeholder="Nota do aluno">
+                </div>
+                <button class="btn btn-outline-primary" type="submit" name="control" value="Resultado">Enviar</button>
+                <button class="btn btn-outline-primary" type="submit" name="control" value="Voltar">Voltar</button>
+            </div>
         </form>
     </body>
 </html>

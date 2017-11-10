@@ -17,7 +17,7 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" 
               integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
         <title>JSP Page</title>
     </head>
     <body>
@@ -34,8 +34,8 @@
         } 
         
         for(Aluno aluno : alunos) {
-            out.println("<h6 class=\"text-center\"> Aluno: " + aluno.getNome_aluno() + "</h6><h6 class=\"text-center\"> Código: " +
-                    aluno.getCod_aluno() + ".</h6><br>");
+            out.println("<h6 class=\"text-center\"> Nome do aluno: " + aluno.getNome_aluno() + "</h6><h6 class=\"text-center\"> Código do aluno: " +
+                    aluno.getCod_aluno() + ".</h6><br><br>");
         }
         %><br>
         <form class="container" action="FrontController" method="post">
