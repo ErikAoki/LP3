@@ -1,27 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mack.controllers;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author joaquim
- */
 public class ControllerFactory {
 
     public static final Controller getControllerByClass(Class actionClass) {
         try {
             return (Controller) actionClass.newInstance();
-        } catch (java.lang.InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (ClassCastException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
