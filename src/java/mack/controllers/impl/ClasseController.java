@@ -18,6 +18,9 @@ public class ClasseController extends AbstractController {
     @Override
     public void execute() {
         String opcao = request.getParameter("opcao");
+        if (opcao==null) {
+            this.setReturnPage("/index.html");
+        }
         if ("aluno".equals(opcao)) {
             this.setReturnPage("/aluno.jsp");
     }
